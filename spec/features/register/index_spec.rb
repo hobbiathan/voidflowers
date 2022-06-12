@@ -15,7 +15,7 @@ RSpec.describe 'Register Index' do
 
       click_button("Register")
 
-      expect(current_path).to eq("/")
+      expect(current_path).to eq("/projects")
     end
   end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Register Index' do
     end
 
     it 'does not have username' do
-      fill_in(:username, with: "bighubert")
+      fill_in(:username, with: "")
       fill_in(:password, with: "iamawesome")
       fill_in(:password_confirmation, with: "iamawesome")
       fill_in(:uniqkey, with: ENV["UNIQ"])
