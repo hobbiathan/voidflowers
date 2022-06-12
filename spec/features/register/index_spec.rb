@@ -31,7 +31,7 @@ RSpec.describe 'Register Index' do
       click_button("Register")
 
       expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Username taken./)
+      expect(page).to have_content(/Username taken./)
     end
 
     it 'does not have username' do
@@ -43,7 +43,7 @@ RSpec.describe 'Register Index' do
       click_button("Register")
 
       expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Username not provided./)
+      expect(page).to have_content(/Username not provided./)
     end
 
     it 'does not have password' do
@@ -55,7 +55,7 @@ RSpec.describe 'Register Index' do
       click_button("Register")
 
       expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Password not provided./)
+      expect(page).to have_content(/Password not provided./)
     end
 
     it 'does not have password confirmation' do
@@ -67,7 +67,7 @@ RSpec.describe 'Register Index' do
       click_button("Register")
 
       expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Password confirmation not provided./)
+      expect(page).to have_content(/Password confirmation not provided./)
     end
 
     it 'does not have matching passwords' do
@@ -79,19 +79,7 @@ RSpec.describe 'Register Index' do
       click_button("Register")
 
       expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Passwords do not match./)
-    end
-
-    it 'does not provide uniqkey' do
-      fill_in(:username, with: "bighubert")
-      fill_in(:password, with: "iamawesome")
-      fill_in(:password_confirmation, with: "iamawesome")
-      fill_in(:uniqkey, with: "")
-
-      click_button("Register")
-
-      expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Uniqkey not provided./)
+      expect(page).to have_content(/Passwords do not match./)
     end
 
     it 'provides incorrect uniqkey' do
@@ -103,7 +91,7 @@ RSpec.describe 'Register Index' do
       click_button("Register")
 
       expect(current_path).to eq("/register")
-      expect(flash[:alert]).to match(/Uniqkey invalid./)
+      expect(page).to have_content(/Uniqkey invalid./)
     end
   end
 end
