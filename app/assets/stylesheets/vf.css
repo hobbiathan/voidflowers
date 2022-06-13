@@ -1,0 +1,29 @@
+body {
+    font-family: Courier;
+}
+
+div.header {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+div.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.project {
+    border: 0px solid;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+div.date {
+    font-style: bold;
+}
+
+div.link {
+    position: absolute;
+    bottom: 0;
+}
