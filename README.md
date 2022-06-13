@@ -55,6 +55,7 @@ Currently, the application contains a handful of features:
 # TBD
 Things to be implemented:
 
+  * Allow non-registered users to view "/projects" and really only that directory (for the time being) 
   * Restrospective testing 
   * figure out circleci, since it just won't remotely work for some godforesaken reason
   * functionality to edit project details
