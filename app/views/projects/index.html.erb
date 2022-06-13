@@ -1,0 +1,37 @@
+<style>
+  div {
+      width: 200px;
+      height: 100px;
+
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+  }
+
+  p {
+    font-family: Courier;
+  }
+</style>
+
+<% flash.each do |type, msg| %>
+    <p><%= msg %></p>
+<% end %>
+
+</br></br>
+
+<% if @user %>
+
+  <p>logged in as: <%= @user.username %></p>
+  <p><%= button_to "logout", logout_path, method: :delete %></p>
+
+<% else %>
+<body>
+  <div>
+  <p style="font-family: Courier;">access restricted.</p>
+  </div>
+</body>
+<% end %>
