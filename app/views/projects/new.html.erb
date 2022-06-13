@@ -19,9 +19,9 @@
 }
 </style>
 <% if Current.user %>
-<% flash.each do |type, msg| %>
+  <% flash.each do |type, msg| %>
       <p style="text-align: center;"><%= msg %></p>
-  <% end %>
+      <% end %>
 <body>
   <div class="absolute-center">
 <%= form_with url: "/projects", method: 'POST', local: true do |form| %>
@@ -40,6 +40,8 @@
   </p>
   </div>
   </body>
+
+  <% end %>
 
   <% else %>
   <style>
