@@ -4,6 +4,11 @@ Recreation of an old site that previously operated under the domain 'vacuumflowe
 
 Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
 
+# Prerequisites
+Ruby 2.7.4
+Rails 5.2.7
+PostgreSQL
+
 # Setup
 After cloning the project into a local repostiory, do the following in its respective order:
 
