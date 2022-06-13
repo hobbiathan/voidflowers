@@ -51,6 +51,7 @@ Things to be implemented:
   * figure out circleci, since it just won't remotely work for some godforesaken reason
   * functionality to edit project details
   * functionality to edit user details
+  * create seeds that include images
   * lol
  
 # FUN FACT
