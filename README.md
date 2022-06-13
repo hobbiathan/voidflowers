@@ -5,6 +5,7 @@ Reimplementation from statically coded JavaScript to a dynamic Rails Engine.
 
 # Setup
 After cloning the project into a local repostiory, do the following in its respective order:
+
 `bundle install`
 
 `rails db:{create,migrate}`
