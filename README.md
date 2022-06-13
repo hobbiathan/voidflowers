@@ -1,7 +1,13 @@
 # README
 
-Recreation of an old site that previously operated under the domain vacuumflowers.com
+Recreation of an old site that previously operated under the domain 'vacuumflowers.com'
+
 Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
+
+# Prerequisites
+Ruby 2.7.4
+Rails 5.2.7
+PostgreSQL
 
 # Setup
 After cloning the project into a local repostiory, do the following in its respective order:
@@ -23,17 +29,28 @@ _Voidflowers_ is meant to be a _personal_ project repository, so there should on
 # Existing features
 Currently, the application contains a handful of features:
 
-  * User registration
-  * User login
+  * User registration/login
   * Session handling
+  * Project creation/display
   * ActiveStorage 
+  * BCrypt password encryption
+  * User registration restriction via enivornment variables with Figaro
+  * Chic automated redirects via JS
+
 
 
 # TBD
 Things to be implemented:
 
-  * Project creation page
-  * Project model update
-  * Project show pages
-  * Universal CSS styling
+  * Restrospective testing 
+  * lol
  
+# FUN FACT
+
+PHUSION PASSENGER DOES NOT SUPPORT ARM64 ARCHITECTURE, SO IT IS NEXT TO IMPOSSIBLE FOR ME TO SELF-HOST THIS ON A RASPBERRY PI RUNNING UBUNTU 21.10 AND NGINX WITH CERTBOX SSL !!!
+
+I LOVE THE LACK OF SUPPORT FOR ARM64 PROCESSORS !!! 
+
+THEY ARE DEFINITELY NOT BECOMING INCREASINGLY POPULAR AS DEMONSTRATED BY THE LANDMARK APPLE M1 CHIP !!!
+
+I LOVE HAVING A QUINTILLION SURPLUS CHIPSET INSTRUCTIONS NOBODY USES !!! 
