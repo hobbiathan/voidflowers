@@ -11,9 +11,11 @@ https://cryptic-sea-64605.herokuapp.com/
 If you don't wish to register your own user, the following is a set of credentials you can use to browse and explore the application's functionality:
 
 Username: `Hubert`
+
 Password: `hubertnumbaone`
 
 
+After logging in, click on the photo in the center of the screen to be redirected to the projects.
 # Prerequisites
 * Ruby 2.7.4
 * Rails 5.2.7
