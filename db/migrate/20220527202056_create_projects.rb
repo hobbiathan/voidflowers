@@ -4,7 +4,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :date_year
       t.string :description
-      t.string :image_url
       t.string :project_url
 
       t.timestamps

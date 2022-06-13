@@ -20,7 +20,7 @@ class RegisterController < ApplicationController
       else
         user = User.create!(user_params)
         session[:user_id] = user.id
-        redirect_to "/projects"
+        redirect_to "/user"
       end
     else
       redirect_to "/register", notice: "Uniqkey invalid." and return

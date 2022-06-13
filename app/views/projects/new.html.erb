@@ -1,0 +1,77 @@
+<style>
+  div {
+      width: 200px;
+      height: 100px;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+  }
+
+  p {
+    font-family: Courier;
+  }
+
+}
+</style>
+<% if Current.user %>
+<% flash.each do |type, msg| %>
+      <p style="text-align: center;"><%= msg %></p>
+  <% end %>
+<body>
+  <div class="absolute-center">
+<%= form_with url: "/projects", method: 'POST', local: true do |form| %>
+  <p>
+  <%= form.label :title %><br/>
+  <%= form.text_field :title %><br/><br/>
+  <%= form.label :date_year %><br/>
+  <%= form.text_field :date_year %><br/><br/>
+  <%= form.label :description %><br/>
+  <%= form.text_field :description %><br/><br/>
+  <%= form.label :project_url %><br/>
+  <%= form.text_field :project_url %><br/><br/>
+  <%= form.label :image %><br/>
+  <%= form.file_field :image %><br/><br/><br/>
+  <%= form.submit "new project" %>
+  </p>
+  </div>
+  </body>
+
+  <% else %>
+  <style>
+    div {
+        width: 200px;
+        height: 100px;
+
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin: auto;
+    }
+
+    p {
+      font-family: Courier;
+    }
+
+    .absolute-center {
+
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+  }
+    </style>
+  <body onLoad="setTimeout('delayedRedirect()', 3000)">
+    <div>
+    <p>access restricted.</p>
+    <p>redirecting...</p>
+    </div>
+  </body>
+  <% end %>

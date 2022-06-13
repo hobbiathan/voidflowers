@@ -1,46 +1,195 @@
-<style>
-  div {
-      width: 200px;
-      height: 100px;
+<html>
+  <head>
+    <title> haute archive </title>
+  </head>
 
-      position: absolute;
-      top:0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+  <% if Current.user %>
+  <body>
+    <div id="container" class="container" style="max-width: 768px;">
+      <button type="button" onclick="step()" style="float:right">flowers</button>
+      <button type="button" onclick="location.href = '/projects/new';" style="marin: 0 auto; display: block;">new project</button>
+      <button type="button" onclick="location.href = '/user';" style="float:left">user</button>
+      <div id="plant div" class="header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>-------------------------------------------------------------------------------- <br>homepage <br>-------------------------------------------------------------------------------- <br>
+      </div>
+      <br>
+      <div id="list" style="max-width: 768px;">
+        <% @projects.each do |project| %>
+        <div class="project" style="height: 128px;">
+          <img src="<%= url_for(project.image) %> width="px" height="128px" style="float: left; margin-right: 8px;">
+          <div>
+            <div><%= project.title %> <div class="date" style="float: right;"><%= project.date_year %></div>
+            </div>
+            <br> <%= project.description%>
+          </div>
+          <div class="link" style="left: 136px; vertical-align: bottom;">
+            <a href="<%= project.project_url %>"><%= project.project_url %></a>
+            <br>
+          </div>
+        </div>
+        <% end %>
+        <br>
+        <br> <br>
+        <br>
+        <br>
+      </div>
+    </div>
+    <script>
+      // <button type="button" onclick="refresh()" > list < /button>
+      var storedSeed = Math.floor(Math.random() * 2983742);
+      step();
+      seedDRand(storedSeed);
+      setupGrowingPlant(document.getElementById("plant div"), false);
+      var contact = " < br > @volfril < br > < br > < br > ";
+      refresh();
+
+      function step() {
+        seedDRand(storedSeed);
+        setupGrowingPlant(document.getElementById("plant div"), true);
+      }
+
+      function end() {
+        seedDRand(storedSeed);
+        setupGrowingPlant(document.getElementById("plant div"), false);
+      }
+
+      function pick(array) {
+        var index = dRandom() % array.length;
+        //console.log("index = " + index);
+        return array[index];
+      }
+      // an integer from the low to the high value specified, includsive
+      function randomIntIn(low, high) {
+        return low + Math.floor((high - low + 1) * Math.random());
+      }
+      // an integer from 0 to the high value, noninclusive
+      function randomInt(range) {
+        return Math.floor(range * Math.random());
+      }
+      //----------------------------------------------------------------------------//
+      // list of all projects
+      var project;
+
+      function Project() { // Like an object, but not (JavaScript is fucked)
+        var descriptor = ["really old", "juicy", "tangy", "strange"];
+        var descriptions = ["mouse simulator", "nightmare sequence synthesizer", "themonuclear warhead launch code generator"];
+        this.name = pick(descriptor) + " project";
+        this.date = new Date(randomIntIn(1972, 2021), randomInt(12));
+        this.description = pick(descriptions) + ".";
+        this.imagePath = "default.png";
+        // overwrite with specified info
+        if (arguments.length > 0) this.name = arguments[0];
+        if (arguments.length > 1) this.date = arguments[1];
+        if (arguments.length > 2) this.description = arguments[2];
+        if (arguments.length > 3) this.imagePath = arguments[3];
+        if (arguments.length > 4) this.link = arguments[4];
+        this.size = 128;
+      }
+
+      function refresh() {
+        var project = []; // Empty project array
+        project.push(new Project("voidflowers.io", "", "a personal multi-media art repository", "lf.png", "voices/faq.txt"));
+        project.push(new Project("Losers Global Inc.", "december 2021", "don't know what the fuck i actually intend to do with this", "globe.gif", "https://losers.global"));
+        /* project.push(new Project (
+        // Test default selector
+        )); */
+        project.push(new Project("vacuum flowers", "in progress", "i once again recognize the colors of  < br / > the world around me and in such, < br / > i feel alive.
+          ",
+          "hers.png", "misc/ps.html"));
+        //project[project.length - 1].size = large;
+        project.push(new Project("%00", "", "no available information.", "flowers.jpg", "ocean/"));
+        project.push(new Project("lol", "", "certified bangers", "lfg.jpg", "misc/muzek.html"));
+        // create html list of projects
+        list("list", project);
+      }
+      // make an html list containing all the projects
+      // we'll probably be passing in an array of project information
+      function list(divName, project) {
+        // get the container to put all the project entries in
+        var parentDiv = document.getElementById(divName);
+        // match width to header (which is 80 characters wide
+        var plantDiv = document.getElementById("plant div");
+        parentDiv.style.maxWidth = plantDiv.clientWidth + "px";
+        document.getElementById("container").style.maxWidth = plantDiv.clientWidth + "px";
+        var baseThumbnailPath = "thumbnails/";
+        var month = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+        parentDiv.innerHTML = "";
+        for (var i = 0; i < project.length; i++) {
+          var projectDiv = document.createElement("div");
+          projectDiv.style.height = project[i].size + "px";
+          projectDiv.className = "project";
+          //projectDiv.style.border = "thin solid #000000";
+          parentDiv.appendChild(projectDiv);
+          // image
+          var thumbnail = document.createElement("img");
+          thumbnail.src = baseThumbnailPath + project[i].imagePath;
+          thumbnail.style.float = "left";
+          thumbnail.style.marginRight = "8px";
+          projectDiv.appendChild(thumbnail);
+          // text
+          var textDiv = document.createElement("div");
+          //textDiv.style.border = "thin solid #000000";
+          var titleDiv = document.createElement("div");
+          //titleDiv.style.float = "left";
+          titleDiv.innerHTML += project[i].name;
+          textDiv.appendChild(titleDiv);
+          var dateDiv = document.createElement("div");
+          dateDiv.className = "date";
+          dateDiv.style.float = "right";
+          if (typeof project[i].date == "object") dateDiv.innerHTML += month[project[i].date.getMonth()] + " " + project[i].date.getFullYear();
+          else dateDiv.innerHTML += project[i].date;
+          titleDiv.appendChild(dateDiv);
+          textDiv.innerHTML += " < br > ";
+          textDiv.innerHTML += project[i].description;
+          projectDiv.appendChild(textDiv);
+          if (project[i].link != undefined) {
+            var linkDiv = document.createElement("div");
+            linkDiv.className = "link";
+            linkDiv.style.left = project[i].size + 8 + "px";
+            // see if we can find a float bottom option
+            linkDiv.style.verticalAlign = "bottom";
+            var linkLabel = project[i].link;
+            if (linkLabel.length > 56) linkLabel = linkLabel.substring(0, 56) + "...";
+            linkDiv.innerHTML = " < a href = \"" + project[i].link + "\">" + linkLabel + "</a> < br > ";
+            projectDiv.appendChild(linkDiv);
+          }
+          parentDiv.innerHTML += " < br > ";
+        }
+        parentDiv.innerHTML += contact;
+      }
+    </script>
+    <% else %>
+    <style>
+      div {
+          width: 200px;
+          height: 100px;
+
+          position: absolute;
+          top:0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          margin: auto;
+      }
+
+      p {
+        font-family: Courier;
+      }
+
+      .absolute-center {
 
       margin: auto;
-  }
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
 
-  p {
-    font-family: Courier;
-  }
-
-  .absolute-center {
-
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-
-}
-</style>
-
-<% flash.each do |type, msg| %>
-    <p><%= msg %></p>
-<% end %>
-
-<% if @user %>
-
-  <p>logged in as: <%= Current.user.username %></p>
-  <p><%= button_to "logout", logout_path, method: :delete %></p>
-  <% if !(Current.user.avatar.nil?) %>
-    <img src="<%= url_for(Current.user.avatar) %>" width="512" height="512" class="absolute-center">
-  <% end %>
-
-<% else %>
-<body>
-  <div>
-  <p>access restricted.</p>
-  </div>
-</body>
-<% end %>
+    }
+      </style>
+    <body onLoad="setTimeout('delayedRedirect()', 3000)">
+      <div>
+      <p>access restricted.</p>
+      <p>redirecting...</p>
+      </div>
+    </body>
+    <% end %>
+  </body>
+</html>

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if user.present? && user.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to "/projects", notice: "login successful" and return
+      redirect_to "/user", notice: "login successful" and return
     else
       flash[:alert] = "invalid username/password."
       render :new
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to "/projects", notice: "logged out."
+    redirect_to "/user", notice: "logged out."
   end
 
   private
