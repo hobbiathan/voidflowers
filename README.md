@@ -17,7 +17,9 @@ Password: `hubertnumbaone`
 
 After logging in, click on the photo in the center of the screen to be redirected to the projects.
 And yes, I intentionally mispelled 'orange'.
-# Prerequisites
+
+
+## Prerequisites
 * Ruby 2.7.4
 * Rails 5.2.7
 * PostgreSQL
@@ -38,8 +40,7 @@ Currently, this is only included in the repository as an example of how the `ENV
 
 The reason why I implemented this design was specifically to restrict user access and registration: I didn't feel that I wanted to manually go into the rails console to generate a user, so I decided to learn about user sessions and registration/login forms.
 
-_Voidflowers_ is meant to be a _personal_ project repository, so there should only ever be _1_ user. Though the current functionality allows for more than a sole user, it's a feature implemented just for the sake of learning. 
-
+_Voidflowers_ is meant to be a _personal_ project repository, so there should only ever be _1_ user. Though the current functionality allows for more than a sole user, it's a feature implemented just for the sake of learning.
 
 
 ## Existing features
@@ -55,7 +56,6 @@ Currently, the application contains a handful of features:
   * Cloud Storage for user provied images via DigitalOcean Spaces 
 
 
-
 ## TBD
 Things to be implemented:
 
@@ -68,7 +68,6 @@ Things to be implemented:
   * delete users
   * create seeds that include images
   * lol
- 
  
  
 ## FUN FACT
