@@ -16,6 +16,7 @@ Password: `hubertnumbaone`
 
 
 After logging in, click on the photo in the center of the screen to be redirected to the projects.
+And yes, I intentionally mispelled 'orange'.
 # Prerequisites
 * Ruby 2.7.4
 * Rails 5.2.7
