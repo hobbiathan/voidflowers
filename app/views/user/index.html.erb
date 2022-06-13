@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+  div {
+      width: 200px;
+      height: 100px;
+
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+  }
+
+  p {
+    font-family: Courier;
+  }
+
+  .absolute-center {
+
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+
+}
+</style>
+</head>
+<% flash.each do |type, msg| %>
+    <p><%= msg %></p>
+<% end %>
+
+<% if Current.user %>
+
+  <p>logged in as: <%= Current.user.username %></p>
+  <p><%= button_to "logout", logout_path, method: :delete %></p>
+  <% if !(Current.user.avatar.nil?) %>
+    <a href="/projects"><img src="<%= url_for(Current.user.avatar) %>" width="512" height="512" class="absolute-center"></a>
+  <% end %>
+
+<% else %>
+<body onLoad="setTimeout('delayedRedirect()', 3000)">
+  <div>
+  <p>access restricted.</p>
+  <p>redirecting...</p>
+  </div>
+</body>
+<% end %>
