@@ -49,6 +49,8 @@ Things to be implemented:
 
   * Restrospective testing 
   * figure out circleci, since it just won't remotely work for some godforesaken reason
+  * functionality to edit project details
+  * functionality to edit user details
   * lol
  
 # FUN FACT
