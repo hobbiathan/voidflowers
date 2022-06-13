@@ -4,7 +4,7 @@ Recreation of an old site that previously operated under the domain 'vacuumflowe
 
 Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
 
-# Live application
+## Live application
 
 https://cryptic-sea-64605.herokuapp.com/
 
@@ -22,7 +22,8 @@ And yes, I intentionally mispelled 'orange'.
 * Rails 5.2.7
 * PostgreSQL
 
-# Setup
+
+## Setup
 After cloning the project into a local repostiory, do the following in its respective order:
 
 `bundle install`
@@ -39,7 +40,9 @@ The reason why I implemented this design was specifically to restrict user acces
 
 _Voidflowers_ is meant to be a _personal_ project repository, so there should only ever be _1_ user. Though the current functionality allows for more than a sole user, it's a feature implemented just for the sake of learning. 
 
-# Existing features
+
+
+## Existing features
 Currently, the application contains a handful of features:
 
   * User registration/login
@@ -53,7 +56,7 @@ Currently, the application contains a handful of features:
 
 
 
-# TBD
+## TBD
 Things to be implemented:
 
   * Allow non-registered users to view "/projects" and really only that directory (for the time being) 
@@ -66,7 +69,9 @@ Things to be implemented:
   * create seeds that include images
   * lol
  
-# FUN FACT
+ 
+ 
+## FUN FACT
 
 PHUSION PASSENGER DOES NOT SUPPORT ARM64 ARCHITECTURE, SO IT IS NEXT TO IMPOSSIBLE FOR ME TO SELF-HOST THIS ON A RASPBERRY PI RUNNING UBUNTU 21.10 AND NGINX WITH CERTBOX SSL !!!
 
