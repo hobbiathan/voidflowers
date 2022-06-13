@@ -1,20 +1,44 @@
+<style>
+  div {
+      width: 200px;
+      height: 100px;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+  }
+
+  p {
+    font-family: Courier;
+  }
+
+}
+</style>
+
 <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
-
+      <p style="text-align: center;"><%= msg %></p>
+  <% end %>
+<body>
+  <div class="absolute-center">
 <%= form_with url: "/register", method: 'POST', local: true do |form| %>
-
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-  <%= form.label :password_confirmation %>
-  <%= form.text_field :password_confirmation %>
-  <%= form.label :uniqkey %>
-  <%= form.text_field :uniqkey %>
-  <%= form.file_field :avatar %>
+  <p>
+  <%= form.label :username %><br/>
+  <%= form.text_field :username %><br/><br/>
+  <%= form.label :password %><br/>
+  <%= form.text_field :password %><br/><br/>
+  <%= form.label :confirm %><br/>
+  <%= form.text_field :password_confirmation %><br/><br/>
+  <%= form.label :uniqkey %><br/>
+  <%= form.text_field :uniqkey %><br/><br/>
+  <%= form.label :avatar %><br/>
+  <%= form.file_field :avatar %><br/><br/><br/>
   <%= form.submit "Register" %>
+  </p>
+  </div>
+  </body>
 
   <% end %>
