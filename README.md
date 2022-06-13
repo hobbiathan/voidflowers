@@ -31,6 +31,7 @@ Currently, the application contains a handful of features:
   * Session handling
   * ActiveStorage 
   * BCrypt password encryption
+  * User registration restriction via enivornment variables with Figaro
   * Chic automated redirects via JS
 
 
