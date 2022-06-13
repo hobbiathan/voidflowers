@@ -9,9 +9,9 @@ Reimplementation from statically coded JavaScript to a dynamic Rails Engine.
 https://cryptic-sea-64605.herokuapp.com/
 
 # Prerequisites
-Ruby 2.7.4
-Rails 5.2.7
-PostgreSQL
+* Ruby 2.7.4
+* Rails 5.2.7
+* PostgreSQL
 
 # Setup
 After cloning the project into a local repostiory, do the following in its respective order:
