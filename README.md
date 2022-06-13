@@ -24,11 +24,9 @@ _Voidflowers_ is meant to be a _personal_ project repository, so there should on
 # Existing features
 Currently, the application contains a handful of features:
 
-  * User registration
-  * User login
-  * Project index show page
-  * Project creation page
+  * User registration/login
   * Session handling
+  * Project creation/display
   * ActiveStorage 
   * BCrypt password encryption
   * User registration restriction via enivornment variables with Figaro
