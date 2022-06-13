@@ -8,6 +8,12 @@ Reimplementation from statically coded JavaScript to a dynamic Rails Engine.
 
 https://cryptic-sea-64605.herokuapp.com/
 
+If you don't wish to register your own user, the following is a set of credentials you can use to browse and explore the application's functionality:
+
+Username: `Hubert`
+Password: `hubertnumbaone`
+
+
 # Prerequisites
 * Ruby 2.7.4
 * Rails 5.2.7
