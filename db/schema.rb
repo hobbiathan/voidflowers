@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_06_13_010618) do
     t.string "title"
     t.string "date_year"
     t.string "description"
-    t.string "image_url"
     t.string "project_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
