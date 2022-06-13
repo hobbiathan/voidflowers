@@ -18,7 +18,7 @@
 
 }
 </style>
-
+<% if Current.user %>
 <% flash.each do |type, msg| %>
       <p style="text-align: center;"><%= msg %></p>
   <% end %>
@@ -41,4 +41,37 @@
   </div>
   </body>
 
+  <% else %>
+  <style>
+    div {
+        width: 200px;
+        height: 100px;
+
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin: auto;
+    }
+
+    p {
+      font-family: Courier;
+    }
+
+    .absolute-center {
+
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+  }
+    </style>
+  <body onLoad="setTimeout('delayedRedirect()', 3000)">
+    <div>
+    <p>access restricted.</p>
+    <p>redirecting...</p>
+    </div>
+  </body>
   <% end %>
