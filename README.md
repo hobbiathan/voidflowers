@@ -30,6 +30,7 @@ Currently, the application contains a handful of features:
   * Project creation page
   * Session handling
   * ActiveStorage 
+  * BCrypt password encryption
   * Chic automated redirects via JS
 
 
