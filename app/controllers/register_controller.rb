@@ -29,7 +29,7 @@ class RegisterController < ApplicationController
 
   private
   def user_params
-    params.permit(:username, :password, :password_confirmation)
+    params.permit(:username, :password, :password_confirmation, :avatar)
   end
 
   def valid_password?
