@@ -1,6 +1,7 @@
 # README
 
-Recreation of an old site that previously operated under the domain vacuumflowers.com
+Recreation of an old site that previously operated under the domain 'vacuumflowers.com'
+
 Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
 
 # Setup
@@ -25,15 +26,17 @@ Currently, the application contains a handful of features:
 
   * User registration
   * User login
+  * Project index show page
+  * Project creation page
   * Session handling
   * ActiveStorage 
+  * Chic automated redirects via JS
+
 
 
 # TBD
 Things to be implemented:
 
-  * Project creation page
-  * Project model update
-  * Project show pages
-  * Universal CSS styling
+  * Restrospective testing 
+  * lol
  
