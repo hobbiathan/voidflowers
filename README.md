@@ -4,6 +4,10 @@ Recreation of an old site that previously operated under the domain 'vacuumflowe
 
 Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
 
+# Live application
+
+https://cryptic-sea-64605.herokuapp.com/
+
 # Prerequisites
 Ruby 2.7.4
 Rails 5.2.7
@@ -36,6 +40,7 @@ Currently, the application contains a handful of features:
   * BCrypt password encryption
   * User registration restriction via enivornment variables with Figaro
   * Chic automated redirects via JS
+  * Cloud Storage for user provied images via DigitalOcean Spaces 
 
 
 
@@ -43,6 +48,7 @@ Currently, the application contains a handful of features:
 Things to be implemented:
 
   * Restrospective testing 
+  * figure out circleci, since it just won't remotely work for some godforesaken reason
   * lol
  
 # FUN FACT
