@@ -59,14 +59,14 @@ Currently, the application contains a handful of features:
 ## TBD
 Things to be implemented:
 
-  * Allow non-registered users to view "/projects" and really only that directory (for the time being) 
   * Restrospective testing 
-  * figure out circleci, since it just won't remotely work for some godforesaken reason
-  * functionality to edit project details
-  * functionality to edit user details
-  * delete projects
-  * delete users
-  * create seeds that include images
-  * lol
+  * Figure out circleci, since it just won't remotely work for some godforesaken reason
+  * Functionality to edit project details
+  * Functionality to edit user details
+  * Delete projects
+  * Create seeds that include images
+  * Deploy to AWS 
+  * Utilize AWS S3 over DigitalOcean Spaces
+  * Organize JS more clearly 
  
  
