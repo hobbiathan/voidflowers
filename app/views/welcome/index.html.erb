@@ -1,3 +1,12 @@
+<script>
+  console.log("welcome() is loaded")
+
+  function welcome(){
+      window.location = "/projects"
+  }
+
+</script>
+
 <style>
   div {
       width: 200px;
@@ -26,9 +35,9 @@
 }
 </style>
 
-<body>
+<body onLoad="setTimeout('welcome()', 1500)">
   <div>
-    <p> under construction. </p>
-    <button type="button" onclick="location.href = '/login';" class="center">login</button>
+    <p> welcome. </p>
+    <p> loading (1.5s) </p>
   </div>
 </body>

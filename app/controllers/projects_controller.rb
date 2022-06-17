@@ -2,8 +2,10 @@ class ProjectsController < ApplicationController
   def index
     if Current.user
       @user = User.find(session[:user_id])
-      @projects = Project.all
     end
+
+    @projects = Project.all
+
   end
 
   def new
