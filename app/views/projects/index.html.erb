@@ -360,42 +360,6 @@
       function randomInt(range) {
         return Math.floor(range * Math.random());
       }
-      //----------------------------------------------------------------------------//
-      // list of all projects
-      var project;
-
-      function Project() { // Like an object, but not (JavaScript is fucked)
-        var descriptor = ["really old", "juicy", "tangy", "strange"];
-        var descriptions = ["mouse simulator", "nightmare sequence synthesizer", "themonuclear warhead launch code generator"];
-        this.name = pick(descriptor) + " project";
-        this.date = new Date(randomIntIn(1972, 2021), randomInt(12));
-        this.description = pick(descriptions) + ".";
-        this.imagePath = "default.png";
-        // overwrite with specified info
-        if (arguments.length > 0) this.name = arguments[0];
-        if (arguments.length > 1) this.date = arguments[1];
-        if (arguments.length > 2) this.description = arguments[2];
-        if (arguments.length > 3) this.imagePath = arguments[3];
-        if (arguments.length > 4) this.link = arguments[4];
-        this.size = 128;
-      }
-
-      function refresh() {
-        var project = []; // Empty project array
-        project.push(new Project("voidflowers.io", "", "a personal multi-media art repository", "lf.png", "voices/faq.txt"));
-        project.push(new Project("Losers Global Inc.", "december 2021", "don't know what the fuck i actually intend to do with this", "globe.gif", "https://losers.global"));
-        /* project.push(new Project (
-        // Test default selector
-        )); */
-        project.push(new Project("vacuum flowers", "in progress", "i once again recognize the colors of  < br / > the world around me and in such, < br / > i feel alive.
-          ",
-          "hers.png", "misc/ps.html"));
-        //project[project.length - 1].size = large;
-        project.push(new Project("%00", "", "no available information.", "flowers.jpg", "ocean/"));
-        project.push(new Project("lol", "", "certified bangers", "lfg.jpg", "misc/muzek.html"));
-        // create html list of projects
-        list("list", project);
-      }
       // make an html list containing all the projects
       // we'll probably be passing in an array of project information
       function list(divName, project) {
@@ -405,8 +369,6 @@
         var plantDiv = document.getElementById("plant div");
         parentDiv.style.maxWidth = plantDiv.clientWidth + "px";
         document.getElementById("container").style.maxWidth = plantDiv.clientWidth + "px";
-        var baseThumbnailPath = "thumbnails/";
-        var month = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
         parentDiv.innerHTML = "";
         for (var i = 0; i < project.length; i++) {
           var projectDiv = document.createElement("div");
