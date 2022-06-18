@@ -1,22 +1,25 @@
+require 'rspotify'
 class SpotifyService
+    def self.user_authorize
+      response = conn("https://accounts.spotify.com/").get("/authorize") do |req|
+        req.params["client_id"] = ENV["SPFY_CLIENT_ID"]
+        req.params["response_type"] = "code"
+        req.params["redirect_uri"] = "https://voidflowers.io"
+        req.params["state"] = "state"
+      end
 
-  def self.recently_played
-    response = conn.get do |req|
-      req.headers["Authorization"] = ENV["SPFY_TKN"]
-      req.headers["Content-Type"] = "application/json"
-      req.params["limit"] = "1"
+      format(response)
     end
-
-    format(response)[:items][0]
-  end
 
   private
 
-  def self.conn
-    Faraday.new(url: "https://api.spotify.com/v1/me/player/recently-played")
+  def self.conn(param)
+    Faraday.new(url: param)
   end
 
   def self.format(response)
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+
 end

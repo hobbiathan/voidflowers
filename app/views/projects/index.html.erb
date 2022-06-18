@@ -309,6 +309,7 @@
       <br>
       <div id="list" style="max-width: 768px;">
         <div class="project" style="height: 128px;">
+          <% if !(@song.nil?) %>
           <iframe src="<%= @song.link %>" frameBorder = "0" width="80" height="80px" style="float: left; margin-right: 8px;" allow="autoplay; encrypted-media; picture-in-picture"></iframe>
           <div>
             <div><%= @song.title %><div class="date" style="float: right;">recently played</div>
@@ -318,6 +319,7 @@
           </div>
           <p style="text-align: center;"> --- --- --- </p>
         </div>
+        <% end %>
         <% @projects.each do |project| %>
         <div class="project" style="height: 128px;">
           <img src="<%= url_for(project.image) %>" width="128px" height="128px" style="float: left; margin-right: 8px;">

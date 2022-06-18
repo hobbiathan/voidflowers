@@ -1,11 +1,14 @@
 class ProjectsController < ApplicationController
   def index
-    if Current.user
-      @user = User.find(session[:user_id])
-    end
+      if Current.user
+        @user = User.find(session[:user_id])
+      end
 
-    @projects = Project.all
-    @song = SpotifyFacade.get_recent
+      @projects = Project.all
+
+      if session[:has_song] == true
+        @song = Song.new(params["data"])
+      end 
   end
 
   def new
