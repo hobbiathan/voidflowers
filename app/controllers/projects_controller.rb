@@ -1,5 +1,3 @@
-require 'sinatra'
-
 class ProjectsController < ApplicationController
   def index
       if Current.user
