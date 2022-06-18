@@ -1,23 +1,13 @@
+# I need to clean up this README 
+
 # README
 
 Recreation of an old site that previously operated under the domain 'vacuumflowers.com'
-
 Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
 
 ## Live application
 
 https://voidflowers.io
-
-If you don't wish to register your own user, the following is a set of credentials you can use to browse and explore the application's functionality:
-
-Username: `Hubert`
-
-Password: `hubertnumbaone`
-
-
-After logging in, click on the photo in the center of the screen to be redirected to the projects.
-And yes, I intentionally mispelled 'orange'.
-
 
 ## Prerequisites
 * Ruby 2.7.4
@@ -34,7 +24,7 @@ After cloning the project into a local repostiory, do the following in its respe
 
 When visting your localhost session, navigate to `localhost:3000/register` to register a user. One of the fields required to register a user is a `Uniqkey`. 
 
-This key is `582efb7c-e6e1-4882-91d6-2a41b04a1302`, which can also be found in your `config/application.yml` file. 
+This key is `REDACTED lol!`, which can also be found in your `config/application.yml` file. 
 
 Currently, this is only included in the repository as an example of how the `ENV["UNIQ"]` variables work _however, this key should be changed to any other unique, random string of characters and prevented from being read by git if you intend on using this application._ 
 
