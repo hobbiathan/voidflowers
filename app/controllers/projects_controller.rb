@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
     end
 
     @projects = Project.all
-
+    @song = SpotifyFacade.get_recent
   end
 
   def new
