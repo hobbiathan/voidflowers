@@ -13,7 +13,7 @@ https://voidflowers.io
 * Ruby 2.7.4
 * Rails 5.2.7
 * PostgreSQL
-
+* Spotify API account
 
 ## Setup
 After cloning the project into a local repostiory, do the following in its respective order:
@@ -25,6 +25,8 @@ After cloning the project into a local repostiory, do the following in its respe
 When visting your localhost session, navigate to `localhost:3000/register` to register a user. One of the fields required to register a user is a `Uniqkey`. 
 
 This key is `REDACTED lol!`, which can also be found in your `config/application.yml` file. 
+
+Something something, register a Spotify API account and make a project, then copy your `client_id` and `client_secret` into the `config/application.yml` file under `SPFY_CLIENT_ID` and `SPFY_CLIENT_SECRET`, respectively
 
 Currently, this is only included in the repository as an example of how the `ENV["UNIQ"]` variables work _however, this key should be changed to any other unique, random string of characters and prevented from being read by git if you intend on using this application._ 
 
@@ -44,6 +46,7 @@ Currently, the application contains a handful of features:
   * User registration restriction via enivornment variables with Figaro
   * Chic automated redirects via JS
   * Cloud Storage for user provied images via DigitalOcean Spaces 
+  * Can display the most recently played track from your Spotify account
 
 
 ## TBD
