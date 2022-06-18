@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :register, only: [:index, :create]
   resources :projects, only: [:index, :new, :create]
-  resources :user, only: [:index]
+  # resources :user, only: [:index]
 
   # Refer to logout button to see how to work with resources instead of handrolling
   # sessions_path(@user) for logout, something like that, I really don't wanna talk about it
@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
 
   get "intruder.alert", to: "intruder#index"
+
+  get '/user', to: 'user#index'
+  get '/auth/spotify/callback', to: 'user#spotify'
 end
