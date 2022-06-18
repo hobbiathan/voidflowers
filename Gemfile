@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
@@ -34,6 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth'
+gem 'rspotify'
 gem 'jsonapi-serializer'
 gem 'faraday'
 gem 'figaro'
