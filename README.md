@@ -6,7 +6,7 @@ Reimplementation from statically coded JavaScript to a dynamic Rails Engine.
 
 ## Live application
 
-https://cryptic-sea-64605.herokuapp.com/
+https://voidflowers.io
 
 If you don't wish to register your own user, the following is a set of credentials you can use to browse and explore the application's functionality:
 
