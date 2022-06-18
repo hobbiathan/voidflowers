@@ -1,5 +1,7 @@
 require_relative 'boot'
 
+
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
@@ -29,5 +31,8 @@ module Voidflowers
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    RSpotify::authenticate(ENV["SPFY_CLIENT_ID"], ENV["SPFY_CLIENT_SECRET"])
+
   end
 end

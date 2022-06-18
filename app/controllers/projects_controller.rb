@@ -1,11 +1,16 @@
 class ProjectsController < ApplicationController
   def index
-    if Current.user
-      @user = User.find(session[:user_id])
-    end
+      if Current.user
+        @user = User.find(session[:user_id])
+      end
 
-    @projects = Project.all
+      @projects = Project.all
 
+      if params[:title] == nil
+        @song = Song.last
+      else
+        @song = Song.find_by_title(params[:title])
+      end
   end
 
   def new
