@@ -308,9 +308,19 @@
       </div>
       <br>
       <div id="list" style="max-width: 768px;">
+        <div class="project" style="height: 128px;">
+          <iframe src="<%= @song.link %>" frameBorder = "0" width="80" height="80px" style="float: left; margin-right: 8px;" allow="autoplay; encrypted-media; picture-in-picture"></iframe>
+          <div>
+            <div><%= @song.title %><div class="date" style="float: right;">recently played</div>
+            </div>by <%= @song.artist %><br/><br/>album: <%= @song.album %>
+          </div>
+          <div class="link" style="left: 136px; vertical-align: bottom;">
+          </div>
+          <p style="text-align: center;"> --- --- --- </p>
+        </div>
         <% @projects.each do |project| %>
         <div class="project" style="height: 128px;">
-          <img src="<%= url_for(project.image) %> width="128px" height="128px" style="float: left; margin-right: 8px;">
+          <img src="<%= url_for(project.image) %>" width="128px" height="128px" style="float: left; margin-right: 8px;">
           <div>
             <div><%= project.title %> <div class="date" style="float: right;"><%= project.date_year %></div>
             </div>
@@ -408,10 +418,13 @@
             if (linkLabel.length > 56) linkLabel = linkLabel.substring(0, 56) + "...";
             linkDiv.innerHTML = " < a href = \"" + project[i].link + "\">" + linkLabel + "</a> < br > ";
             projectDiv.appendChild(linkDiv);
+            parentDiv.innerHTML += contact;
+
           }
           parentDiv.innerHTML += " < br > ";
+          parentDiv.innerHTML += contact;
+
         }
-        parentDiv.innerHTML += contact;
       }
     </script>
   </body>
