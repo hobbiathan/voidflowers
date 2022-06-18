@@ -35,7 +35,7 @@
 
   <p>logged in as: <%= Current.user.username %></p>
   <p><%= button_to "logout", logout_path, method: :delete %></p>
-  <p><%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post %></p>
+  <p><%= link_to 'update recent song', '/auth/spotify', method: :post %></p>
   <% if !(Current.user.avatar.nil?) %>
     <a href="/projects"><img src="<%= url_for(Current.user.avatar) %>" width="512" height="512" class="absolute-center"></a>
   <% end %>
