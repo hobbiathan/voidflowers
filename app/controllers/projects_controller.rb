@@ -1,3 +1,5 @@
+require 'sinatra'
+
 class ProjectsController < ApplicationController
   def index
       if Current.user
@@ -6,9 +8,11 @@ class ProjectsController < ApplicationController
 
       @projects = Project.all
 
-      if session[:has_song] == true
-        @song = Song.new(params["data"])
-      end 
+      if params[:title] == nil
+        @song = Song.last
+      else
+        @song = Song.find_by_title(params[:title])
+      end
   end
 
   def new
