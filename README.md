@@ -1,65 +1,60 @@
-# I need to clean up this README 
+# Voidflowers
 
-# README
+Voidflowers is a recreation of an old site that previously operated under the domain "vacuumflowers.com", reimplemented from statically coded JavaScript to a more dynamic Rails application.
 
-Recreation of an old site that previously operated under the domain 'vacuumflowers.com'
-Reimplementation from statically coded JavaScript to a dynamic Rails Engine. 
-
-## Live application
+## Live Application
 
 https://voidflowers.io
 
+
 ## Prerequisites
+
 * Ruby 2.7.4
 * Rails 5.2.7
 * PostgreSQL
-* Spotify API account
+* DigitalOcean Spaces Account (Optional)
+* Spotify API Account (Optional)
 
 ## Setup
-After cloning the project into a local repostiory, do the following in its respective order:
+
+After cloning the project into a local repository, the following should be done:
 
 `bundle install`
 
 `rails db:{create,migrate}`
 
-When visting your localhost session, navigate to `localhost:3000/register` to register a user. One of the fields required to register a user is a `Uniqkey`. 
+`rails active_storage:install`
 
-This key is `REDACTED lol!`, which can also be found in your `config/application.yml` file. 
+Running `rails s` will start the application on `localhost:3000`.
 
-Something something, register a Spotify API account and make a project, then copy your `client_id` and `client_secret` into the `config/application.yml` file under `SPFY_CLIENT_ID` and `SPFY_CLIENT_SECRET`, respectively
+After doing the following, the `config/application.yml` file should be modified so that the `UNIQKEY` attribute has a different value - failing to do such potentially risks and live and public instance of this application to have external users register, having them add their own content to the site. 
 
-Currently, this is only included in the repository as an example of how the `ENV["UNIQ"]` variables work _however, this key should be changed to any other unique, random string of characters and prevented from being read by git if you intend on using this application._ 
+Alternatively, after creating account through the `"/register"` method, or directly via the Rails console, the route to `"/register"` can in theory just be deleted.
 
-The reason why I implemented this design was specifically to restrict user access and registration: I didn't feel that I wanted to manually go into the rails console to generate a user, so I decided to learn about user sessions and registration/login forms.
+Setting up DigitalOcean spaces is best done if googled on your own, I really am not fluent in this process yet and trying to describe it would likely be a larger setback to getting this project up and running than anything - that being said, DigitalOcean Spaces is not required for a local instance, and the storage can be set to local, _note that if this application were to be hosted on Heroku, however, using local storage will seem to work temporarily, but will later cause issues - use some cloud service if you want to host this live._
 
-_Voidflowers_ is meant to be a _personal_ project repository, so there should only ever be _1_ user. Though the current functionality allows for more than a sole user, it's a feature implemented just for the sake of learning.
+If you'd like to have the Spotify functionality where you can display the most recent song played, you'll need a Spotify Developer account and an application on there; Get the Client ID and Client Secret, and place them in the `config/application.yml` file under `SPFY_CLIENT_ID` and `SPFY_CLIENT_SECRET`, respectively.
 
+_Do not commit your config/application.yml file. This is only done within my repository as an example, my keys are changed and/or not comitted within my live application._
 
-## Existing features
-Currently, the application contains a handful of features:
-
-  * User registration/login
-  * Session handling
-  * Project creation/display
-  * ActiveStorage 
-  * BCrypt password encryption
-  * User registration restriction via enivornment variables with Figaro
-  * Chic automated redirects via JS
-  * Cloud Storage for user provied images via DigitalOcean Spaces 
-  * Can display the most recently played track from your Spotify account
+After all this, Voidflowers should be up and running! Feel free to add projects and click the `flowers` button.
 
 
-## TBD
-Things to be implemented:
+## Existing Features
 
-  * Restrospective testing 
-  * Figure out circleci, since it just won't remotely work for some godforesaken reason
-  * Functionality to edit project details
-  * Functionality to edit user details
-  * Delete projects
-  * Create seeds that include images
-  * Deploy to AWS 
-  * Utilize AWS S3 over DigitalOcean Spaces
-  * Organize JS more clearly 
- 
- 
+* User registration/login
+* Session handling
+* Credential encryption
+* ActiveStorage/DigitalOcean Spaces file handling
+* Spotify API consumption
+
+
+## Features to implement
+
+
+* Retrospective testing (not a feature but yeah)
+* Project UPDATE/DELETE
+* User UPDATE/DELETE
+* Proper seeding (User, Projects, Spotify Songs)
+* CircleCI implementation (just never worked for some reason)
+* AWS/DigitalOcean Deployment 
