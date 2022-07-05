@@ -31,7 +31,9 @@ After doing the following, the `config/application.yml` file should be modified 
 
 Alternatively, after creating account through the `"/register"` method, or directly via the Rails console, the route to `"/register"` can in theory just be deleted.
 
-Setting up DigitalOcean spaces is best done if googled on your own, I really am not fluent in this process yet and trying to describe it would likely be a larger setback to getting this project up and running than anything - that being said, DigitalOcean Spaces is not required for a local instance, and the storage can be set to local, _note that if this application were to be hosted on Heroku, however, using local storage will seem to work temporarily, but will later cause issues - use some cloud service if you want to host this live._
+Setting up DigitalOcean spaces is best done if googled on your own, I really am not fluent in this process yet and trying to describe it would likely be a larger setback to getting this project up and running than anything - that being said, DigitalOcean Spaces is not required for a local instance, and the storage can be set to local. 
+
+_Note: if this application were to be hosted on Heroku, however, using local storage will seem to work temporarily, but will later cause issues - use some cloud service if you want to host this live._
 
 If you'd like to have the Spotify functionality where you can display the most recent song played, you'll need a Spotify Developer account and an application on there; Get the Client ID and Client Secret, and place them in the `config/application.yml` file under `SPFY_CLIENT_ID` and `SPFY_CLIENT_SECRET`, respectively.
 
