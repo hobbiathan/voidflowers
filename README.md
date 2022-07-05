@@ -40,7 +40,7 @@ If you'd like to have the Spotify functionality where you can display the most r
 _Do not commit your config/application.yml file. This is only done within my repository as an example, my keys are changed and/or not comitted for my live application._
 
 After all this, Voidflowers should be up and running! Feel free to add projects and click the `flowers` button.
-w
+
 
 ## Existing Features
 
