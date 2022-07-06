@@ -21,9 +21,9 @@ After cloning the project into a local repository, the following should be done:
 
 `bundle install`
 
-`rails db:{create,migrate}`
-
 `rails active_storage:install`
+
+`rails db:{create,migrate}`
 
 Running `rails s` will start the application on `localhost:3000`.
 
