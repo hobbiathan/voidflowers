@@ -1,6 +1,6 @@
 # Voidflowers
 
-Voidflowers is a recreation of an old site that previously operated under the domain "vacuumflowers.com", reimplemented from statically coded JavaScript to a more dynamic Rails application.
+Voidflowers is a recreation of an old site that previously operated under the domain "vacuumflowers.com", reimplemented from statically coded JavaScript to a more dynamic Rails application. Some things should definitely be refactored. 
 
 ## Live Application
 
