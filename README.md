@@ -53,7 +53,7 @@ After all this, Voidflowers should be up and running! Feel free to add projects 
 
 ## Features to implement
 
-
+* Complete rewrite with ActiveStorage emphasized tests (feels very clunky right now)
 * Retrospective testing (not a feature but yeah)
   * Notably, testing for ActiveStorage uploads
 * Project UPDATE/DELETE
